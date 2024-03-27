@@ -23,7 +23,6 @@ export function InputSelect<TItem>({
       if (selectedItem === null) {
         return
       }
-
       consumerOnChange(selectedItem)
       setSelectedValue(selectedItem)
     },
@@ -71,7 +70,7 @@ export function InputSelect<TItem>({
                 "RampInputSelect--dropdown-container-opened": isOpen,
               })}
               {...getMenuProps()}
-              style={{ top: dropdownPosition.top, left: dropdownPosition.left }}
+              style={{ position: "absolute", top: dropdownPosition.top, left: dropdownPosition.left }}
             >
               {renderItems()}
             </div>
@@ -126,6 +125,5 @@ const getDropdownPosition: GetDropdownPositionFn = (target) => {
       left,
     }
   }
-
   return { top: 0, left: 0 }
 }
